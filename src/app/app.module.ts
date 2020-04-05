@@ -13,6 +13,10 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 // se importan las rutas que configuramos en el app.routes.ts
 import { ROUTES } from './app.routes';
 import { UrlimagePipe } from './pipes/urlimage.pipe';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { ArtistasPipe } from './pipes/artistas.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,10 @@ import { UrlimagePipe } from './pipes/urlimage.pipe';
     ArtistaComponent,
     NavbarComponent,
     UrlimagePipe,
+    TarjetasComponent,
+    LoadingComponent,
+    ArtistasPipe,
+    DomseguroPipe
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ export class UrlimagePipe implements PipeTransform {
     if(value.length > 0)
       return value[0].url;
 
-    return 'assets/img/notfound.jpg';
+    return 'assets/img/noimage.png';
   }
 
 }

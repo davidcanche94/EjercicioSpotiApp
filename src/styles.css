@@ -18,6 +18,11 @@ hr {
     width: 150px;
 }
 
+.img-square {
+    border-radius: 10%;
+    width: 70px;
+}
+
 .card-title,
 .card-text {
     color: black;

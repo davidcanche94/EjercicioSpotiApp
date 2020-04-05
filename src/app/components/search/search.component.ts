@@ -6,20 +6,29 @@ import { SpotifyService } from 'src/app/services/spotify.service';
   templateUrl: './search.component.html',
   styles: []
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent{
 
   artistas : any[ ] = [];
+  loadingShow : boolean ;
  
-  constructor(private spotify:SpotifyService) { }
-
-  ngOnInit() {
+  constructor(private spotify:SpotifyService) {
   }
 
   buscar(termino:string){
+    this.loadingShow = true;
+    if(termino){
+      this.spotify.getArtist(termino).subscribe((data:any) => {
+        this.artistas = data;
+        this.loadingShow = false;
+      });
+    }else{
+      this.artistas = [];
+      this.loadingShow = false;
+    }
 
-    this.spotify.getArtist(termino).subscribe((data:any) => {
-      this.artistas = data;
-    });
+
+
+
   }
 
 }
