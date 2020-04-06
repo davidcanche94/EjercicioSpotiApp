@@ -11,26 +11,11 @@ export class SpotifyService {
     console.log('Spotify services listo');
   }
 
-  tokenSpotify : string = '';
-
-  getToken(){
-    const body = { grant_type:'client_credentials',
-                   client_id:'2b8e3eb30cbb4b54bf84987d8c4d1b1d',
-                   client_secret:'37650402a1194b388a7c201077a4cbf4' 
-                  };
-
-    return this.http.post('https://accounts.spotify.com/api/token',body);
-
-  }
-
   getQuery (termino:string){
-    // this.getToken().subscribe( (data:any) => {
-    //   console.log(data);
-    //  });
     const url = `https://api.spotify.com/v1/${termino}`;
 
     const headers = new HttpHeaders({
-      'Authorization':'Bearer BQCijO8x3uoX0MBkzJj28IuvZJUJRKQk8SPqYnXM_FTGI1Z_4LhME_xgTtVhJyXRrAggN75X-_okTB1TXW4'
+      'Authorization':'Bearer BQDlNsKC4yjBOPyrBsY5jr0J6N7ynC1oYKa1IGgIhBGowJrgv7vnGUcMOqS0mK32A0AD4D_1c-FmyKTtMIA'
     });
 
     return this.http.get(url, {headers});

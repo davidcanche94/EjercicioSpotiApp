@@ -2,29 +2,18 @@
     <div class="col">
 
       <div class="input-group mb-3">
-
         <input #termino class="form-control" type="text" (keyup)="buscar(termino.value)" placeholder="Buscar artista...">
         <div class="input-group-prepend">
           <span (click)="buscar(termino.value)" class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
         </div>
-      </div>
-        <!-- <input #termino class="form-control" type="text" (keyup)="buscar(termino.value)" placeholder="Buscar artista..."> -->
-        
+      </div>        
     </div>
 </div>
 
 <app-loading *ngIf="loadingShow"></app-loading>
 
-<div class="row mt-5" *ngIf="!loadingShow">
+<app-alert-error *ngIf="errorAlert" [inputError]="mensajeError"></app-alert-error>
 
+<div class="row mt-5" *ngIf="!loadingShow">
   <app-tarjetas [items]="artistas"></app-tarjetas>
-    <!-- <div class="card-columns">
-        <div class="card" *ngFor="let artista of artistas">
-          <img src="{{artista.images | urlimage }}" class="card-img-top" alt="{{artista.images | urlimage }}">
-          <div class="card-body">
-            <h5 class="card-title">{{artista.name}}</h5>
-            
-          </div>
-        </div>
-    </div> -->
 </div>

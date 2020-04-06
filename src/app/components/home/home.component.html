@@ -1,10 +1,6 @@
 <app-loading *ngIf="loadingShow"></app-loading>
 
-<div class="alert alert-danger animated fadeIn" *ngIf="errorAlert">
-  <h3>Error</h3>
-
-  <p>{{ mensajeError }}</p>
-</div>
+<app-alert-error *ngIf="errorAlert" [inputError]="mensajeError"></app-alert-error>
 
 <div class="row mt-5">
   <app-tarjetas [items]="nuevasCanciones" *ngIf="!loadingShow"></app-tarjetas>
